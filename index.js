@@ -39,6 +39,7 @@ client.connect(err => {
       const Email = req.body.Email;
       const status = req.body.status;
       const description = req.body.bug.description;
+      const voter = req.body.voter;
       // const newImg = file.data;
       // const encImg = newImg.toString("base64");
       // var image = {
@@ -55,7 +56,8 @@ client.connect(err => {
         date,
         vote,
         Email,
-        status
+        status,
+        voter
       })
       .then(result =>{
         console.log(result.acknowledged)
