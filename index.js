@@ -155,6 +155,16 @@ client.connect(err => {
       })
     })
 
+    app.patch('/vote/:id', (req, res) => {
+      bugs.updateOne({_id: ObjectId(req.params.id)},
+      {
+        $set: {voter: req.body.datass}
+      })
+      .then (result => {
+        res.send(result.modifiedCount > 0)
+      })
+    })
+
       
     console.log("Database")
 
