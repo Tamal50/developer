@@ -158,7 +158,7 @@ client.connect(err => {
     app.patch('/vote/:id', (req, res) => {
       bugs.updateOne({_id: ObjectId(req.params.id)},
       {
-        $push: {voter: req.body.datass}
+        $push: {voter: req.body.votert }
       })
       .then (result => {
         res.send(result.modifiedCount > 0)
